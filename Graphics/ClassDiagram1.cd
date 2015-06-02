@@ -1,0 +1,222 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ClassDiagram MajorVersion="1" MinorVersion="1">
+  <Class Name="Graphics.Form1" Collapsed="true">
+    <Position X="23.75" Y="2.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>ADSAAAAGACAAAAAgACCAAAACAAAAIAAIAAQAAQCAAAA=</HashCode>
+      <FileName>Form1.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Graphics.Program" Collapsed="true">
+    <Position X="23.75" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAABAAAAAA=</HashCode>
+      <FileName>Program.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Graphics.Properties.Resources" Collapsed="true">
+    <Position X="23.75" Y="3.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAABEAAAAQAAAAAAAAAAAAAAAIA=</HashCode>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Graphics.Properties.Settings" Collapsed="true">
+    <Position X="23.75" Y="1.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAIAAAAAABAAAAAAAAAAAAAAA=</HashCode>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Graphics.Shape">
+    <Position X="9.25" Y="1.75" Width="1.5" />
+    <AssociationLine Name="info" Type="Graphics.ShapeInfo">
+      <MemberNameLabel ManuallyPlaced="true">
+        <Position X="0.443" Y="0.612" />
+      </MemberNameLabel>
+    </AssociationLine>
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAgAAAAAAAAAAAAAAAAAAQAAAAAAAAAA=</HashCode>
+      <FileName>Shape.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Property Name="info" />
+    </ShowAsAssociation>
+  </Class>
+  <Class Name="Graphics.ShapeInfo">
+    <Position X="8.25" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>ShapeInfo.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Graphics.Rect">
+    <Position X="10.75" Y="3.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAgAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Rect.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Graphics.Star">
+    <Position X="13.5" Y="3.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAgAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Star.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Graphics.CommonGraphics">
+    <Position X="5.75" Y="10.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAQABAAAAAAAAAAgAAAAAAAAAAAAEAAAAAAAAA=</HashCode>
+      <FileName>CommonGraphics.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Graphics.GdiPlusGraphics">
+    <Position X="3.75" Y="12.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAQABAgAAAAIAAAgAAAAAAAAAAAAEAAAAAAAAA=</HashCode>
+      <FileName>GdiPlusGraphics.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Graphics.CairoGraphics">
+    <Position X="7" Y="12.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAQABAAAAAAAAAAgAAAAAAAAAAAAEAAAAAAAAA=</HashCode>
+      <FileName>CairoGraphics.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Graphics.GdiPlusJpegGraphics">
+    <Position X="3.5" Y="16" Width="1.75" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>GdiPlusJpegGraphics.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Graphics.CairoJpegGraphics">
+    <Position X="6.25" Y="15.75" Width="1.75" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>CairoJpegGraphics.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Graphics.CairoSvgGraphics">
+    <Position X="8.5" Y="15.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>CairoSvgGraphics.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Graphics.Block">
+    <Position X="8.25" Y="3.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAgAAAAAAAAAAAAAAAAAAAAAAAAAAABA=</HashCode>
+      <FileName>Block.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Graphics.Diagram">
+    <Position X="5.5" Y="3.5" Width="1.5" />
+    <AssociationLine Name="factory" Type="Graphics.DiagramFactory">
+      <MemberNameLabel ManuallyPlaced="true">
+        <Position X="2.256" Y="-0.367" />
+      </MemberNameLabel>
+    </AssociationLine>
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAgAgAAAIAAAAAAAAAAAAAAAAAAAAAAAEA=</HashCode>
+      <FileName>Diagram.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Property Name="factory" />
+    </ShowAsAssociation>
+  </Class>
+  <Class Name="Graphics.DiagramFactory">
+    <Position X="1.25" Y="0.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAEAAAACAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>DiagramFactory.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Graphics.FcBlock">
+    <Position X="7" Y="6" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAgAAAAAAAAAAAAAAAAAAAAAAAAAAABA=</HashCode>
+      <FileName>FcBlock.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Graphics.AcBlock">
+    <Position X="9.75" Y="6" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAgAAAAAAAAAAAAAAAAAAAAAAAAAAABA=</HashCode>
+      <FileName>AcBlock.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Graphics.FcStarBlock">
+    <Position X="5.5" Y="8.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAgAAAAAAAAAAAAAAAAAAAAAAAAAAABA=</HashCode>
+      <FileName>FcStarBlock.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Graphics.FcInputBlock">
+    <Position X="7.5" Y="8.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAgAAAAAAAAAAAAAAAAAAAAAAAAAAABA=</HashCode>
+      <FileName>FcInputBlock.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Graphics.AcStarBlock">
+    <Position X="9.25" Y="8.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAgAAAAAAAAAAAAAAAAAAAAAAAAAAABA=</HashCode>
+      <FileName>AcStarBlock.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Graphics.AcInputBlock">
+    <Position X="11.25" Y="8.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAgAAAAAAAAAAAAAAAAAAAAAAAAAAABA=</HashCode>
+      <FileName>AcInputBlock.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Graphics.FcFactory">
+    <Position X="0.5" Y="2.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAEAAAACAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>FcFactory.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Graphics.AcFactory">
+    <Position X="2.75" Y="2.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAEAAAACAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>AcFactory.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Graphics.EffectedShape">
+    <Position X="16.5" Y="3.5" Width="1.5" />
+    <AssociationLine Name="shape" Type="Graphics.Shape">
+      <MemberNameLabel ManuallyPlaced="true">
+        <Position X="6.225" Y="-0.607" />
+      </MemberNameLabel>
+    </AssociationLine>
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAgAAAAAAAAAAAAgAAAAAAAAAAAAABAA=</HashCode>
+      <FileName>EffectedShape.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Property Name="shape" />
+    </ShowAsAssociation>
+  </Class>
+  <Class Name="Graphics.ShadowShape">
+    <Position X="14.25" Y="5.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAgAAAAAAAAAAAAgAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>ShadowShape.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Graphics.HighlightShape">
+    <Position X="18.5" Y="5.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAgAAAAAAAAAAAAgAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>HighlightShape.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Font Name="Segoe UI" Size="9" />
+</ClassDiagram>
