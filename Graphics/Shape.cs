@@ -10,7 +10,7 @@ namespace Graphics
     {
         public Shape()
         {
-
+            this.Info = new ShapeInfo();
         }
 
         public Shape(ShapeInfo info)
