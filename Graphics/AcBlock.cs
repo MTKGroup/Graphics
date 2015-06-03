@@ -16,5 +16,20 @@ namespace Graphics
         {
             throw new System.NotImplementedException();
         }
+
+        public AcBlock()
+        { }
+
+        public AcBlock(ShapeInfo info)
+            :base(info)
+        {
+ 
+        }
+
+        public AcBlock(int x, int y, int width, int height)
+            :base(x, y, width, height)
+        {
+
+        }
     }
 }

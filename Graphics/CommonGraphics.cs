@@ -17,12 +17,17 @@ namespace Graphics
             throw new System.NotImplementedException();
         }
 
-        public virtual void DrawEclipse(int cx, int cy, int hradius, int vradius)
+        public virtual void DrawEclipse(int x, int y, int width, int height)
         {
             throw new System.NotImplementedException();
         }
 
         public virtual void DrawString(int x, int y, string text)
+        {
+            throw new System.NotImplementedException();
+        }
+
+        public virtual void DrawFilledEclipse(int x, int y, int width, int height)
         {
             throw new System.NotImplementedException();
         }

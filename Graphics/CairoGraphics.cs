@@ -7,7 +7,7 @@ namespace Graphics
 {
     public class CairoGraphics : CommonGraphics
     {
-        public override void DrawEclipse(int cx, int cy, int hradius, int vradius)
+        public override void DrawEclipse(int x, int y, int width, int height)
         {
             throw new System.NotImplementedException();
         }
@@ -23,6 +23,11 @@ namespace Graphics
         }
 
         public override void DrawString(int x, int y, string text)
+        {
+            throw new System.NotImplementedException();
+        }
+
+        public override void DrawFilledEclipse(int x, int y, int width, int height)
         {
             throw new System.NotImplementedException();
         }

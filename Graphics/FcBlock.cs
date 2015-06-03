@@ -16,5 +16,20 @@ namespace Graphics
         {
             throw new System.NotImplementedException();
         }
+
+        public FcBlock()
+        { }
+
+        public FcBlock(ShapeInfo info)
+            :base(info)
+        {
+            
+        }
+
+        public FcBlock(int x, int y, int width, int height)
+            :base(x, y, width, height)
+        {
+        
+        }
     }
 }

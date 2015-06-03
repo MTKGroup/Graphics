@@ -47,7 +47,7 @@
     <Compile Include="AcBlock.cs" />
     <Compile Include="AcFactory.cs" />
     <Compile Include="AcInputBlock.cs" />
-    <Compile Include="AcStarBlock.cs" />
+    <Compile Include="AcStartBlock.cs" />
     <Compile Include="Block.cs" />
     <Compile Include="CairoGraphics.cs" />
     <Compile Include="CairoJpegGraphics.cs" />
@@ -59,7 +59,7 @@
     <Compile Include="FcBlock.cs" />
     <Compile Include="FcFactory.cs" />
     <Compile Include="FcInputBlock.cs" />
-    <Compile Include="FcStarBlock.cs" />
+    <Compile Include="FcStartBlock.cs" />
     <Compile Include="Form1.cs">
       <SubType>Form</SubType>
     </Compile>

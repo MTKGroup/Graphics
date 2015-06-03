@@ -3,7 +3,7 @@
   <Class Name="Graphics.Form1" Collapsed="true">
     <Position X="23.75" Y="2.25" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>ADSAAAAGACAAAAAgACCAAAACAAAAIAAIAAQAAQCAAAA=</HashCode>
+      <HashCode>ADSAAAAGACAAAAAgACCAAAACAAAAIAAIAAQAAQCABAA=</HashCode>
       <FileName>Form1.cs</FileName>
     </TypeIdentifier>
   </Class>
@@ -28,23 +28,23 @@
   </Class>
   <Class Name="Graphics.Shape">
     <Position X="9.25" Y="1.75" Width="1.5" />
-    <AssociationLine Name="info" Type="Graphics.ShapeInfo">
+    <AssociationLine Name="Info" Type="Graphics.ShapeInfo">
       <MemberNameLabel ManuallyPlaced="true">
-        <Position X="0.443" Y="0.612" />
+        <Position X="0.612" Y="0.443" />
       </MemberNameLabel>
     </AssociationLine>
     <TypeIdentifier>
-      <HashCode>AAAAAAAAAAAAAgAAAAAAAAAAAAAAAAAAQAAAAAAAAAA=</HashCode>
+      <HashCode>AAAAAAAAAAAAAgAAAAAAAAAAAAAAAAAAAAAAAEAAAAA=</HashCode>
       <FileName>Shape.cs</FileName>
     </TypeIdentifier>
     <ShowAsAssociation>
-      <Property Name="info" />
+      <Property Name="Info" />
     </ShowAsAssociation>
   </Class>
   <Class Name="Graphics.ShapeInfo">
-    <Position X="8.25" Y="0.5" Width="1.5" />
+    <Position X="11.5" Y="0.5" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <HashCode>AAAAAAAABAAAAAAAAAAAAEAAAAAAAAAAAAAAAAAAYAA=</HashCode>
       <FileName>ShapeInfo.cs</FileName>
     </TypeIdentifier>
   </Class>
@@ -65,21 +65,21 @@
   <Class Name="Graphics.CommonGraphics">
     <Position X="5.75" Y="10.25" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AAAAAAAQABAAAAAAAAAAgAAAAAAAAAAAAEAAAAAAAAA=</HashCode>
+      <HashCode>AAAAAAAQABAAAAAAAAAAgAAAAAAAAAAAAEAAACAAAAA=</HashCode>
       <FileName>CommonGraphics.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="Graphics.GdiPlusGraphics">
     <Position X="3.75" Y="12.5" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AAAAAAAQABAgAAAAIAAAgAAAAAAAAAAAAEAAAAAAAAA=</HashCode>
+      <HashCode>AAAAAAAQABAgAAAAIAAAgAAAAAAAAAAAAEAAACAAAAA=</HashCode>
       <FileName>GdiPlusGraphics.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="Graphics.CairoGraphics">
     <Position X="7" Y="12.5" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AAAAAAAQABAAAAAAAAAAgAAAAAAAAAAAAEAAAAAAAAA=</HashCode>
+      <HashCode>AAAAAAAQABAAAAAAAAAAgAAAAAAAAAAAAEAAACAAAAA=</HashCode>
       <FileName>CairoGraphics.cs</FileName>
     </TypeIdentifier>
   </Class>
@@ -147,11 +147,11 @@
       <FileName>AcBlock.cs</FileName>
     </TypeIdentifier>
   </Class>
-  <Class Name="Graphics.FcStarBlock">
+  <Class Name="Graphics.FcStartBlock">
     <Position X="5.5" Y="8.25" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAAAAAAgAAAAAAAAAAAAAAAAAAAAAAAAAAABA=</HashCode>
-      <FileName>FcStarBlock.cs</FileName>
+      <FileName>FcStartBlock.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="Graphics.FcInputBlock">
@@ -161,15 +161,15 @@
       <FileName>FcInputBlock.cs</FileName>
     </TypeIdentifier>
   </Class>
-  <Class Name="Graphics.AcStarBlock">
+  <Class Name="Graphics.AcStartBlock">
     <Position X="9.25" Y="8.25" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAAAAAAgAAAAAAAAAAAAAAAAAAAAAAAAAAABA=</HashCode>
-      <FileName>AcStarBlock.cs</FileName>
+      <FileName>AcStartBlock.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="Graphics.AcInputBlock">
-    <Position X="11.25" Y="8.25" Width="1.5" />
+    <Position X="11.25" Y="8.25" Width="2.25" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAAAAAAgAAAAAAAAAAAAAAAAAAAAAAAAAAABA=</HashCode>
       <FileName>AcInputBlock.cs</FileName>
