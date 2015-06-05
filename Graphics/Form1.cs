@@ -14,14 +14,19 @@ namespace Graphics
     {
 
         GdiPlusGraphics g = new GdiPlusGraphics();
-        Shape shape = new AcInputBlock(50, 50, 150, 100);
+        Shape shape = new FcStartBlock(50, 50, 155, 111, Color.Black);
+
+        Shape effectedShape; 
+
         private Point start;
         private Point end;
         private bool ve;
 
         public Form1()
+
         {
             InitializeComponent();
+            effectedShape = new ShadowShape(shape);
         }
 
         private void Form1_Load(object sender, EventArgs e)
@@ -40,10 +45,10 @@ namespace Graphics
         void panel1_Paint(object sender, PaintEventArgs e)
         {
 
-            
 
-           
-            shape.Draw(g);
+
+            //shape.Draw(g);
+            effectedShape.Draw(g);
         }
 
         void Form1_Paint(object sender, PaintEventArgs e)

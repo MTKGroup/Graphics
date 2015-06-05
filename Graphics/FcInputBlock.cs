@@ -19,8 +19,8 @@ namespace Graphics
 
         }
 
-        public FcInputBlock(int x, int y, int width, int height)
-            :base(x, y, width, height)
+        public FcInputBlock(int x, int y, int width, int height, Color color)
+            :base(x, y, width, height, color)
         {
 
         }
@@ -39,12 +39,12 @@ namespace Graphics
             Point C = new Point(this.Info.X - this.Info.Width / 5 + this.Info.Width,
                                 this.Info.Y + this.Info.Height);
             Point D = new Point(this.Info.X - this.Info.Width/5, this.Info.Y + this.Info.Height);
-            
 
-            g.DrawLine(A.X, A.Y, B.X, B.Y);
-            g.DrawLine(A.X, A.Y, D.X, D.Y);
-            g.DrawLine(B.X, B.Y, C.X, C.Y);
-            g.DrawLine(D.X, D.Y, C.X, C.Y);
+
+            g.DrawLine(A.X, A.Y, B.X, B.Y, this.Info.Color);
+            g.DrawLine(A.X, A.Y, D.X, D.Y, this.Info.Color);
+            g.DrawLine(B.X, B.Y, C.X, C.Y, this.Info.Color);
+            g.DrawLine(D.X, D.Y, C.X, C.Y, this.Info.Color);
         }
     }
 }

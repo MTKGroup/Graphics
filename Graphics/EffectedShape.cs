@@ -7,25 +7,17 @@ namespace Graphics
 {
     public abstract class EffectedShape : Shape
     {
-        public Shape shape
-        {
-            get
-            {
-                throw new System.NotImplementedException();
-            }
-            set
-            {
-            }
-        }
+
+
+        public Shape shape {get; set;}
     
         public override void Draw(CommonGraphics g)
         {
-            throw new System.NotImplementedException();
+            this.Format(g);
+            this.shape.Draw(g);
         }
 
-        public virtual void Format(CommonGraphics g, Shape shape)
-        {
-            throw new System.NotImplementedException();
-        }
+        public abstract void Format(CommonGraphics g);
+
     }
 }

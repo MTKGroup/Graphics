@@ -19,8 +19,8 @@ namespace Graphics
 
         }
 
-        public AcInputBlock(int x, int y, int width, int height)
-            :base(x, y, width, height)
+        public AcInputBlock(int x, int y, int width, int height, Color color)
+            :base(x, y, width, height, color)
         {
 
         }
@@ -42,11 +42,11 @@ namespace Graphics
                                 this.Info.Y + this.Info.Height);
             Point E = new Point(this.Info.X, this.Info.Y + this.Info.Height);
 
-            g.DrawLine(A.X, A.Y, B.X, B.Y);
-            g.DrawLine(B.X, B.Y, C.X, C.Y);
-            g.DrawLine(C.X, C.Y, D.X, D.Y);
-            g.DrawLine(D.X, D.Y, E.X, E.Y);
-            g.DrawLine(E.X, E.Y, A.X, A.Y);
+            g.DrawLine(A.X, A.Y, B.X, B.Y, this.Info.Color);
+            g.DrawLine(B.X, B.Y, C.X, C.Y, this.Info.Color);
+            g.DrawLine(C.X, C.Y, D.X, D.Y, this.Info.Color);
+            g.DrawLine(D.X, D.Y, E.X, E.Y, this.Info.Color);
+            g.DrawLine(E.X, E.Y, A.X, A.Y, this.Info.Color);
         }
     }
 }

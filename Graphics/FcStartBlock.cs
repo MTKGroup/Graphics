@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Drawing;
 using System.Linq;
 using System.Text;
 
@@ -18,13 +19,13 @@ namespace Graphics
 
         }
 
-        public FcStartBlock (int x, int y, int width, int height)
-            :base(x, y, width, height)
+        public FcStartBlock(int x, int y, int width, int height, Color color)
+            :base(x, y, width, height, color)
         {
 
         }
 
-        public override Graphics.Block Clone(Graphics.DiagramFactory f)
+        public override Block Clone(Graphics.DiagramFactory f)
         {
             FcStartBlock cloneObj = new FcStartBlock();
 
@@ -35,8 +36,8 @@ namespace Graphics
 
         public override void Draw(Graphics.CommonGraphics g)
         {
-            g.DrawEclipse(this.Info.X, this.Info.Y, this.Info.Width, this.Info.Height);
-            g.DrawString(this.Info.X + this.Info.Width / 2, this.Info.Y + this.Info.Height / 2, "Start");
+            g.DrawEclipse(this.Info.X, this.Info.Y, this.Info.Width, this.Info.Height, this.Info.Color);
+            g.DrawString(this.Info.X + this.Info.Width / 2, this.Info.Y + this.Info.Height / 2, "Start", this.Info.Color);
         }
     }
 }

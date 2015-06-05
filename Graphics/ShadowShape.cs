@@ -7,14 +7,24 @@ namespace Graphics
 {
     public class ShadowShape : EffectedShape
     {
-        public override void Draw(Graphics.CommonGraphics g)
+        public ShadowShape ()
         {
-            throw new System.NotImplementedException();
+
         }
 
-        public override void Format(Graphics.CommonGraphics g, Graphics.Shape shape)
+        public ShadowShape (Shape s)
         {
-            throw new System.NotImplementedException();
+            this.shape = s;
+        }
+
+        public override void Format(Graphics.CommonGraphics g)
+        {
+            this.shape.Info.X += 10;
+            this.shape.Info.Y += 10;
+            shape.Draw(g);
+
+            this.shape.Info.X -= 10;
+            this.shape.Info.Y -= 10;
         }
     }
 }

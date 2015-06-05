@@ -17,35 +17,39 @@ namespace Graphics
             set { lib = value; }
         }
 
-        public override void DrawEclipse(int x, int y, int width, int height)
+        public override void DrawEclipse(int x, int y, int width, int height, Color color)
         {
-            lib.DrawEllipse(Pens.Black, x, y, width, height);
+            Pen pen = new Pen(color);
+            lib.DrawEllipse(pen, x, y, width, height);
         }
 
-        public override void DrawLine(int x1, int y1, int x2, int y2)
+        public override void DrawLine(int x1, int y1, int x2, int y2, Color color)
         {
-            lib.DrawLine(Pens.Black, x1, y1, x2, y2);
+            Pen pen = new Pen(color);
+            lib.DrawLine(pen, x1, y1, x2, y2);
         }
 
-        public override void DrawRectangle(int x, int y, int width, int height)
+        public override void DrawRectangle(int x, int y, int width, int height, Color color)
         {
-            lib.DrawRectangle(Pens.Black, x, y, width, height);
+            Pen pen = new Pen(color);
+            lib.DrawRectangle(pen, x, y, width, height);
         }
 
-        public override void DrawString(int x, int y, string text)
+        public override void DrawString(int x, int y, string text, Color color)
         {
+            Brush brush = new SolidBrush(color);
             Font font = new Font("Arial", 12, FontStyle.Bold, GraphicsUnit.Point);
 
             StringFormat stringFormat = new StringFormat();
             stringFormat.Alignment = StringAlignment.Center;
             stringFormat.LineAlignment = StringAlignment.Center;
 
-            lib.DrawString(text, font, Brushes.Black, x, y, stringFormat);
+            lib.DrawString(text, font, brush, x, y, stringFormat);
         }
 
-        public override void DrawFilledEclipse(int x, int y, int width, int height)
+        public override void DrawFilledEclipse(int x, int y, int width, int height, Color color)
         {
-            SolidBrush solidBrush = new SolidBrush(Color.Black);
+            SolidBrush solidBrush = new SolidBrush(color);
             lib.FillEllipse(solidBrush, x, y, width, height);
         }
     }

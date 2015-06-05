@@ -44,8 +44,6 @@ namespace Graphics
         public void Convert(DiagramFactory f)
         {
             throw new System.NotImplementedException();
-        }
-
-        
+        }        
     }
 }

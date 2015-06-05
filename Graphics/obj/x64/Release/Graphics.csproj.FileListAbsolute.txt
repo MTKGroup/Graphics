@@ -1,0 +1,8 @@
+F:\KHTN\hoc ky 8\MTK HDT & UD\Bai tap\Graphics\Source\Graphics\Graphics\bin\x64\Release\Graphics.exe.config
+F:\KHTN\hoc ky 8\MTK HDT & UD\Bai tap\Graphics\Source\Graphics\Graphics\bin\x64\Release\Graphics.exe
+F:\KHTN\hoc ky 8\MTK HDT & UD\Bai tap\Graphics\Source\Graphics\Graphics\bin\x64\Release\Graphics.pdb
+F:\KHTN\hoc ky 8\MTK HDT & UD\Bai tap\Graphics\Source\Graphics\Graphics\obj\x64\Release\Graphics.Form1.resources
+F:\KHTN\hoc ky 8\MTK HDT & UD\Bai tap\Graphics\Source\Graphics\Graphics\obj\x64\Release\Graphics.Properties.Resources.resources
+F:\KHTN\hoc ky 8\MTK HDT & UD\Bai tap\Graphics\Source\Graphics\Graphics\obj\x64\Release\Graphics.csproj.GenerateResource.Cache
+F:\KHTN\hoc ky 8\MTK HDT & UD\Bai tap\Graphics\Source\Graphics\Graphics\obj\x64\Release\Graphics.exe
+F:\KHTN\hoc ky 8\MTK HDT & UD\Bai tap\Graphics\Source\Graphics\Graphics\obj\x64\Release\Graphics.pdb

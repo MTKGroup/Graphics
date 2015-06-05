@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Drawing;
 using System.Linq;
 using System.Text;
 
@@ -7,14 +8,29 @@ namespace Graphics
 {
     public class HighlightShape : EffectedShape
     {
-        public override void Draw(Graphics.CommonGraphics g)
+        public HighlightShape ()
         {
-            throw new System.NotImplementedException();
+
         }
 
-        public override void Format(Graphics.CommonGraphics g, Graphics.Shape shape)
+        public HighlightShape(Shape s)
         {
-            throw new System.NotImplementedException();
+            this.shape = s;
+        }
+
+        public override void Format(Graphics.CommonGraphics g)
+        {
+            this.shape.Info.X -= 10;
+            this.shape.Info.Y -= 10;
+            this.shape.Info.Width += 20;
+            this.shape.Info.Height += 20;
+
+            shape.Draw(g);
+
+            this.shape.Info.X += 10;
+            this.shape.Info.Y += 10;
+            this.shape.Info.Width -= 20;
+            this.shape.Info.Height -= 20;
         }
     }
 }
