@@ -14,7 +14,7 @@ namespace Graphics
     {
 
         GdiPlusGraphics g = new GdiPlusGraphics();
-        Shape shape = new FcStartBlock(50, 50, 155, 111, Color.Black);
+        Shape shape = new FcInputBlock(50, 50, 155, 111, Color.Black);
 
         Shape effectedShape; 
 
