@@ -13,6 +13,11 @@ namespace Graphics
             throw new System.NotImplementedException();
         }
 
+        public override void Fill(Graphics.CommonGraphics g, Color fillColor)
+        {
+            throw new System.NotImplementedException();
+        }
+
         public AcBlock()
         { }
 

@@ -26,5 +26,10 @@ namespace Graphics
         {
             g.DrawRectangle(this.Info.X, this.Info.Y, this.Info.Width, this.Info.Height, this.Info.Color);
         }
+
+        public override void Fill(Graphics.CommonGraphics g, Color fillColor)
+        {
+            throw new System.NotImplementedException();
+        }
     }
 }
