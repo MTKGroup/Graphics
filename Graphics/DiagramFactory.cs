@@ -7,12 +7,12 @@ namespace Graphics
 {
     public class DiagramFactory
     {
-        public virtual void CreateStar(ShapeInfo info)
+        public virtual Block CreateStart(ShapeInfo info)
         {
             throw new System.NotImplementedException();
         }
 
-        public virtual void CreateInput(ShapeInfo info)
+        public virtual Block CreateInput(ShapeInfo info)
         {
             throw new System.NotImplementedException();
         }

@@ -27,11 +27,7 @@ namespace Graphics
 
         public override Block Clone(Graphics.DiagramFactory f)
         {
-            FcStartBlock cloneObj = new FcStartBlock();
-
-            cloneObj.Info = this.Info;
-
-            return cloneObj;
+            return f.CreateStart(this.Info);
         }
 
         public override void Draw(Graphics.CommonGraphics g)

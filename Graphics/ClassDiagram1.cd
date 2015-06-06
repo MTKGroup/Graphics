@@ -3,7 +3,7 @@
   <Class Name="Graphics.Form1" Collapsed="true">
     <Position X="23.75" Y="2.25" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>ADSABAAGACAAAAAgACCAAAACAAAAIAAIAAQAAQCABAA=</HashCode>
+      <HashCode>ABSABAAEACAgAAAAAACAAAACAAAAIAAIAAQAAQAABAA=</HashCode>
       <FileName>Form1.cs</FileName>
     </TypeIdentifier>
   </Class>
@@ -105,7 +105,7 @@
     </TypeIdentifier>
   </Class>
   <Class Name="Graphics.Block">
-    <Position X="8.25" Y="3.5" Width="1.5" />
+    <Position X="8.25" Y="3.75" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAAAAAAgAAAAAAAAAAAAAACAAAAAAAAAAAABA=</HashCode>
       <FileName>Block.cs</FileName>
@@ -129,7 +129,7 @@
   <Class Name="Graphics.DiagramFactory">
     <Position X="1.25" Y="0.75" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AAAAAAAAAAEAAAACAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <HashCode>AAAAAAAAAAEAAAAAAAAgAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
       <FileName>DiagramFactory.cs</FileName>
     </TypeIdentifier>
   </Class>
@@ -178,14 +178,14 @@
   <Class Name="Graphics.FcFactory">
     <Position X="0.5" Y="2.5" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AAAAAAAAAAEAAAACAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <HashCode>AAAAAAAAAAEAAAAAAAAgAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
       <FileName>FcFactory.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="Graphics.AcFactory">
     <Position X="2.75" Y="2.5" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AAAAAAAAAAEAAAACAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <HashCode>AAAAAAAAAAEAAAAAAAAgAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
       <FileName>AcFactory.cs</FileName>
     </TypeIdentifier>
   </Class>
