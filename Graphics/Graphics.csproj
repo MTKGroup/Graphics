@@ -115,6 +115,9 @@
     <Compile Include="ShadowShape.cs" />
     <Compile Include="Shape.cs" />
     <Compile Include="ShapeInfo.cs" />
+    <Compile Include="ShapeThumb.cs">
+      <SubType>Component</SubType>
+    </Compile>
     <Compile Include="Star.cs" />
     <EmbeddedResource Include="Form1.resx">
       <DependentUpon>Form1.cs</DependentUpon>

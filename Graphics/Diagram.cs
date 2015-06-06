@@ -40,7 +40,7 @@ namespace Graphics
         {
             foreach (var block in blockList)
             {
-                block.Draw(g);
+                block.Draw(g); 
             }
         }
 
