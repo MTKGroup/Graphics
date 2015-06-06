@@ -28,34 +28,50 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.components = new System.ComponentModel.Container();
-            this.timer1 = new System.Windows.Forms.Timer(this.components);
             this.panel1 = new System.Windows.Forms.Panel();
+            this.grpBoxTypeDiagram = new System.Windows.Forms.GroupBox();
+            this.grpBoxShape = new System.Windows.Forms.GroupBox();
             this.SuspendLayout();
-            // 
-            // timer1
-            // 
-            this.timer1.Enabled = true;
-            this.timer1.Interval = 10;
-            this.timer1.Tick += new System.EventHandler(this.timer1_Tick);
             // 
             // panel1
             // 
             this.panel1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.panel1.Location = new System.Drawing.Point(12, 21);
+            this.panel1.Location = new System.Drawing.Point(235, 26);
+            this.panel1.Margin = new System.Windows.Forms.Padding(4);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(266, 337);
+            this.panel1.Size = new System.Drawing.Size(617, 526);
             this.panel1.TabIndex = 0;
             this.panel1.MouseDown += new System.Windows.Forms.MouseEventHandler(this.panel1_MouseDown);
             this.panel1.MouseMove += new System.Windows.Forms.MouseEventHandler(this.panel1_MouseMove);
             this.panel1.MouseUp += new System.Windows.Forms.MouseEventHandler(this.panel1_MouseUp);
             // 
+            // grpBoxTypeDiagram
+            // 
+            this.grpBoxTypeDiagram.Location = new System.Drawing.Point(13, 26);
+            this.grpBoxTypeDiagram.Name = "grpBoxTypeDiagram";
+            this.grpBoxTypeDiagram.Size = new System.Drawing.Size(200, 100);
+            this.grpBoxTypeDiagram.TabIndex = 1;
+            this.grpBoxTypeDiagram.TabStop = false;
+            this.grpBoxTypeDiagram.Text = "Loại sơ đồ";
+            // 
+            // grpBoxShape
+            // 
+            this.grpBoxShape.Location = new System.Drawing.Point(13, 142);
+            this.grpBoxShape.Name = "grpBoxShape";
+            this.grpBoxShape.Size = new System.Drawing.Size(200, 410);
+            this.grpBoxShape.TabIndex = 0;
+            this.grpBoxShape.TabStop = false;
+            this.grpBoxShape.Text = "Hình vẽ";
+            // 
             // Form1
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(404, 402);
+            this.ClientSize = new System.Drawing.Size(865, 565);
+            this.Controls.Add(this.grpBoxShape);
+            this.Controls.Add(this.grpBoxTypeDiagram);
             this.Controls.Add(this.panel1);
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "Form1";
             this.Text = "Form1";
             this.Load += new System.EventHandler(this.Form1_Load);
@@ -65,8 +81,9 @@
 
         #endregion
 
-        private System.Windows.Forms.Timer timer1;
         private System.Windows.Forms.Panel panel1;
+        private System.Windows.Forms.GroupBox grpBoxTypeDiagram;
+        private System.Windows.Forms.GroupBox grpBoxShape;
     }
 }
 

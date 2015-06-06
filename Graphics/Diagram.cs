@@ -38,12 +38,16 @@ namespace Graphics
 
         public override void Draw(Graphics.CommonGraphics g)
         {
-            throw new System.NotImplementedException();
+            foreach (var block in blockList)
+            {
+                block.Draw(g);
+            }
         }
 
         public void Convert(DiagramFactory f)
         {
-            throw new System.NotImplementedException();
+            
+
         }        
     }
 }
