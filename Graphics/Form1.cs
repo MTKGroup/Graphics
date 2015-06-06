@@ -14,7 +14,11 @@ namespace Graphics
     {
 
         GdiPlusGraphics g = new GdiPlusGraphics();
+<<<<<<< HEAD
         Shape shape = new FcInputBlock(50, 50, 155, 111, Color.Black);
+=======
+        Shape shape = new AcInputBlock(50, 50, 155, 111, Color.Black);
+>>>>>>> origin/Nam
 
         Shape effectedShape; 
         private Point start = new Point();

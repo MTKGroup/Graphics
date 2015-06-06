@@ -52,5 +52,14 @@ namespace Graphics
             SolidBrush solidBrush = new SolidBrush(color);
             lib.FillEllipse(solidBrush, x, y, width, height);
         }
+
+        public override void FillPolygon(System.Drawing.Point[] points, System.Drawing.Color fillColor)
+        {
+            Brush brush = new SolidBrush(fillColor);
+
+            this.lib.FillPolygon(brush, points);
+        }
+
+
     }
 }

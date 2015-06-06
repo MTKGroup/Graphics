@@ -32,5 +32,10 @@ namespace Graphics
         {
             throw new System.NotImplementedException();
         }
+
+        public override void FillPolygon(System.Drawing.Point[] points, System.Drawing.Color fillColor)
+        {
+            throw new System.NotImplementedException();
+        }
     }
 }

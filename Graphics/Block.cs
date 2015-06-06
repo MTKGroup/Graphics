@@ -36,5 +36,10 @@ namespace Graphics
         {
             return null;
         }
+
+        public override void Fill(Graphics.CommonGraphics g, Color fillColor)
+        {
+            throw new System.NotImplementedException();
+        }
     }
 }

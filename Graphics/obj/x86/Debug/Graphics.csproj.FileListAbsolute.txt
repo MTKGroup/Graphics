@@ -6,3 +6,4 @@ F:\KHTN\hoc ky 8\MTK HDT & UD\Bai tap\Graphics\Source\Graphics\Graphics\obj\x86\
 F:\KHTN\hoc ky 8\MTK HDT & UD\Bai tap\Graphics\Source\Graphics\Graphics\obj\x86\Debug\Graphics.csproj.GenerateResource.Cache
 F:\KHTN\hoc ky 8\MTK HDT & UD\Bai tap\Graphics\Source\Graphics\Graphics\obj\x86\Debug\Graphics.exe
 F:\KHTN\hoc ky 8\MTK HDT & UD\Bai tap\Graphics\Source\Graphics\Graphics\obj\x86\Debug\Graphics.pdb
+F:\KHTN\hoc ky 8\MTK HDT & UD\Bai tap\Graphics\Source\Graphics\Graphics\obj\x86\Debug\Graphics.csprojResolveAssemblyReference.cache

@@ -48,5 +48,20 @@ namespace Graphics
             g.DrawLine(D.X, D.Y, E.X, E.Y, this.Info.Color);
             g.DrawLine(E.X, E.Y, A.X, A.Y, this.Info.Color);
         }
+
+        public override void Fill(Graphics.CommonGraphics g, Color fillColor)
+        {
+            Point A = new Point(this.Info.X, this.Info.Y);
+            Point B = new Point(this.Info.X + this.Info.Width, this.Info.Y);
+            Point C = new Point(this.Info.X + this.Info.Width,
+                                this.Info.Y + this.Info.Height - this.Info.Height / 5);
+            Point D = new Point(this.Info.X + this.Info.Width - this.Info.Width / 5,
+                                this.Info.Y + this.Info.Height);
+            Point E = new Point(this.Info.X, this.Info.Y + this.Info.Height);
+
+            Point[] points = { A, B, C, D, E };
+
+            g.FillPolygon(points, fillColor);
+        }
     }
 }

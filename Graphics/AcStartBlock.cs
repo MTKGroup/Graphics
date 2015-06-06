@@ -36,5 +36,10 @@ namespace Graphics
         {
             g.DrawFilledEclipse(this.Info.X, this.Info.Y, this.Info.Width, this.Info.Height, this.Info.Color);
         }
+
+        public override void Fill(Graphics.CommonGraphics g, Color fillColor)
+        {
+            g.DrawFilledEclipse(this.Info.X, this.Info.Y, this.Info.Width, this.Info.Height, fillColor);
+        }
     }
 }

@@ -35,5 +35,10 @@ namespace Graphics
         {
             
         }
+
+        public virtual void Fill(CommonGraphics g, Color fillColor)
+        {
+
+        }
     }
 }

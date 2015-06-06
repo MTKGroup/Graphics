@@ -32,5 +32,10 @@ namespace Graphics
         {
             throw new System.NotImplementedException();
         }
+
+        public virtual void FillPolygon(Point[] points, Color fillColor)
+        {
+            throw new System.NotImplementedException();
+        }
     }
 }
