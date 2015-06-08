@@ -7,14 +7,14 @@ namespace Graphics
 {
     public class AcFactory : DiagramFactory
     {
-        public override void CreateInput(Graphics.ShapeInfo info)
+        public override Block CreateInput(Graphics.ShapeInfo info)
         {
-            throw new System.NotImplementedException();
+            return new AcInputBlock(info);
         }
 
-        public override void CreateStar(Graphics.ShapeInfo info)
+        public override Block CreateStart(Graphics.ShapeInfo info)
         {
-            throw new System.NotImplementedException();
+            return new AcStartBlock(info);
         }
     }
 }

@@ -7,33 +7,14 @@ namespace Graphics
 {
     public class Diagram : Shape
     {
-        public DiagramFactory factory
-        {
-            get
-            {
-                return factory;
-            }
-            set
-            {
-                factory = value;
-            }
-        }
+        public DiagramFactory factory {get; set;}
 
-        public List<Block> blockList
-        {
-            get
-            {
-                return blockList;
-            }
-            set
-            {
-                blockList = value;
-            }
-        }
+        public List<Block> blockList {get; set;}
 
         public Diagram(DiagramFactory f)
         {
             factory = f;
+            blockList = new List<Block>();
         }
 
         public override void Draw(Graphics.CommonGraphics g)
@@ -48,6 +29,15 @@ namespace Graphics
         {
             
 
+            List<Block> convertedBlockList = new List<Block>();
+            foreach (var block in this.blockList)
+            {
+                Block convertedBlock = block.Clone(f);
+                convertedBlockList.Add(convertedBlock);
+            }
+
+            this.blockList = convertedBlockList;
+            this.factory = f;
         }        
     }
 }

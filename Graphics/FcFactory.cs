@@ -8,14 +8,14 @@ namespace Graphics
     public class FcFactory : DiagramFactory
     {
 
-        public override void CreateInput(Graphics.ShapeInfo info)
+        public override Block CreateInput(Graphics.ShapeInfo info)
         {
-            throw new System.NotImplementedException();
+            return new FcInputBlock(info);
         }
 
-        public override void CreateStar(Graphics.ShapeInfo info)
+        public override Block CreateStart(Graphics.ShapeInfo info)
         {
-            throw new System.NotImplementedException();
+            return new FcStartBlock(info);
         }
     }
 }
