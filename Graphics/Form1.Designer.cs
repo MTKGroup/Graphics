@@ -50,6 +50,7 @@
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(568, 526);
             this.panel1.TabIndex = 0;
+<<<<<<< HEAD
             // 
             // grpBoxTypeDiagram
             // 
@@ -138,6 +139,8 @@
             this.cairoLibraryToolStripMenuItem.Size = new System.Drawing.Size(175, 24);
             this.cairoLibraryToolStripMenuItem.Text = "Cairo library";
             this.cairoLibraryToolStripMenuItem.CheckedChanged += new System.EventHandler(this.graphicsLibraryToolStripMenuItem_CheckedChanged);
+=======
+>>>>>>> origin/Nam
             // 
             // Form1
             // 

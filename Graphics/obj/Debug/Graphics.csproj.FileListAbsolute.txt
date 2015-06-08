@@ -8,6 +8,7 @@ F:\KHTN\hoc ky 8\MTK HDT & UD\Bai tap\Graphics\Source\Graphics\Graphics\obj\Debu
 F:\KHTN\hoc ky 8\MTK HDT & UD\Bai tap\Graphics\Source\Graphics\Graphics\obj\Debug\Graphics.exe
 F:\KHTN\hoc ky 8\MTK HDT & UD\Bai tap\Graphics\Source\Graphics\Graphics\obj\Debug\Graphics.pdb
 <<<<<<< HEAD
+<<<<<<< HEAD
 F:\KHTN\hoc ky 8\MTK HDT & UD\Bai tap\Graphics\Source\Graphics\Graphics\bin\Debug\Graphics.pdb
 F:\KHTN\hoc ky 8\MTK HDT & UD\Bai tap\Graphics\Source\Graphics\Graphics\obj\Debug\Graphics.csprojResolveAssemblyReference.cache
 C:\Users\cop\Documents\GitHub\Graphics\Graphics\bin\Debug\Graphics.exe.config
@@ -19,5 +20,7 @@ C:\Users\cop\Documents\GitHub\Graphics\Graphics\obj\Debug\Graphics.csproj.Genera
 C:\Users\cop\Documents\GitHub\Graphics\Graphics\obj\Debug\Graphics.exe
 C:\Users\cop\Documents\GitHub\Graphics\Graphics\obj\Debug\Graphics.pdb
 C:\Users\cop\Documents\GitHub\Graphics\Graphics\obj\Debug\Graphics.csprojResolveAssemblyReference.cache
+=======
+>>>>>>> origin/Nam
 =======
 >>>>>>> origin/Nam
