@@ -6,3 +6,6 @@ F:\KHTN\hoc ky 8\MTK HDT & UD\Bai tap\Graphics\Source\Graphics\Graphics\obj\x64\
 F:\KHTN\hoc ky 8\MTK HDT & UD\Bai tap\Graphics\Source\Graphics\Graphics\obj\x64\Debug\Graphics.csproj.GenerateResource.Cache
 F:\KHTN\hoc ky 8\MTK HDT & UD\Bai tap\Graphics\Source\Graphics\Graphics\obj\x64\Debug\Graphics.exe
 F:\KHTN\hoc ky 8\MTK HDT & UD\Bai tap\Graphics\Source\Graphics\Graphics\obj\x64\Debug\Graphics.pdb
+C:\Users\cop\Documents\GitHub\Graphics\Graphics\bin\x64\Debug\Graphics.exe.config
+C:\Users\cop\Documents\GitHub\Graphics\Graphics\obj\x64\Debug\Graphics.exe
+C:\Users\cop\Documents\GitHub\Graphics\Graphics\obj\x64\Debug\Graphics.pdb
