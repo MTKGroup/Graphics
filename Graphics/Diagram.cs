@@ -22,13 +22,14 @@ namespace Graphics
             foreach (var block in blockList)
             {
                 block.Draw(g); 
+            foreach (var block in this.blockList)
+            {
+                block.Draw(g);
             }
         }
 
         public void Convert(DiagramFactory f)
         {
-            
-
             List<Block> convertedBlockList = new List<Block>();
             foreach (var block in this.blockList)
             {
