@@ -19,10 +19,7 @@ namespace Graphics
 
         public override void Draw(Graphics.CommonGraphics g)
         {
-<<<<<<< HEAD
             
-=======
->>>>>>> origin/Nam
             foreach (var block in this.blockList)
             {
                 block.Draw(g);

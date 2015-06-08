@@ -14,7 +14,6 @@ namespace Graphics
     {
 
         GdiPlusGraphics g = new GdiPlusGraphics();
-<<<<<<< HEAD
         GdiPlusGraphics g2 = new GdiPlusGraphics();
 
         DiagramFactory factory;
@@ -22,27 +21,17 @@ namespace Graphics
         Shape shape;
         List<Shape> shapes = new List<Shape>();
         ShapeThumb[] thumbs;
-=======
-        Block block1 = new AcInputBlock(50, 50, 155, 111, Color.Black);
-        Block block2 = new AcStartBlock(50, 150, 155, 111, Color.Black);
-        Diagram diagram = new Diagram(new AcFactory());
-        DiagramFactory factory = new FcFactory();
->>>>>>> origin/Nam
 
         Shape effectedShape; 
         private Point start = new Point();
         private Point end = new Point();
         private bool isDrawing;
 
-<<<<<<< HEAD
 
-=======
->>>>>>> origin/Nam
         public Form1()
 
         {
             InitializeComponent();
-<<<<<<< HEAD
             this.DoubleBuffered = true;
 
             effectedShape = new ShadowShape(shape);
@@ -67,21 +56,6 @@ namespace Graphics
             l2.Bounds = new Rectangle(30, 120, 80, 80);
             l2.Text = "Input";
             l2.FlatStyle = FlatStyle.Flat;
-=======
-            effectedShape = new ShadowShape(block1);
-        }
-
-        private void Form1_Load(object sender, EventArgs e)
-        {
-            this.DoubleBuffered = true;
-            this.Paint += Form1_Paint;
-            g.Lib = panel1.CreateGraphics();
-            panel1.Paint += panel1_Paint;
-
-            diagram.blockList.Add(block1);
-            diagram.blockList.Add(block2);
-
->>>>>>> origin/Nam
             
 
             l1.CheckedChanged += ShapeThumb_CheckedChanged;
@@ -108,7 +82,6 @@ namespace Graphics
 
         private void createSelectBoxEffect()
         {
-<<<<<<< HEAD
             RadioButton r1 = new RadioButton();
             r1.Location = new Point(10, 25);
             r1.Text = "None";
@@ -132,10 +105,6 @@ namespace Graphics
             grpBoxEffect.Controls.Add(r2);
             grpBoxEffect.Controls.Add(r3);
 
-=======
-            diagram.Convert(factory);
-            diagram.Draw(g);
->>>>>>> origin/Nam
         }
 
         private void radioEffect_CheckedChanged(object sender, EventArgs e)
@@ -204,7 +173,6 @@ namespace Graphics
                 shape.Draw(g);
             }
         }
-<<<<<<< HEAD
 
 
         private void panel1_MouseDown(object sender, MouseEventArgs e)
@@ -251,7 +219,5 @@ namespace Graphics
             }
 
         }
-=======
->>>>>>> origin/Nam
     }
 }
