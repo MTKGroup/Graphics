@@ -19,9 +19,7 @@ namespace Graphics
 
         public override void Draw(Graphics.CommonGraphics g)
         {
-            foreach (var block in blockList)
-            {
-                block.Draw(g); 
+            
             foreach (var block in this.blockList)
             {
                 block.Draw(g);

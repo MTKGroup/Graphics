@@ -129,5 +129,12 @@ namespace Graphics
 
             this.Checked = true;
         }
+
+        internal void changeFactory(DiagramFactory diagramFactory)
+        {
+            var info = this.shape.Info;
+
+            
+        }
     }
 }

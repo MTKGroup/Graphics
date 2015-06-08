@@ -20,6 +20,7 @@ namespace Graphics
         EffectedShape effect;
         Shape shape;
         List<Shape> shapes = new List<Shape>();
+        ShapeThumb[] thumbs;
 
         Shape effectedShape; 
         private Point start = new Point();
@@ -44,18 +45,28 @@ namespace Graphics
 
         private void createSelectBoxShape()
         {
-            ShapeThumb l1 = new ShapeThumb(new FcStartBlock());
+            ShapeThumb l1 = new ShapeThumb(this.factory.CreateStart(
+                                    new ShapeInfo()));
             l1.Bounds   =   new Rectangle(30, 30, 80, 80);
             l1.Text     =   "Start";
             l1.FlatStyle = FlatStyle.Flat;
 
-            l1.CheckedChanged += l1_CheckedChanged;
+            ShapeThumb l2 = new ShapeThumb(this.factory.CreateInput(
+                                    new ShapeInfo()));
+            l2.Bounds = new Rectangle(30, 120, 80, 80);
+            l2.Text = "Input";
+            l2.FlatStyle = FlatStyle.Flat;
+            
 
+            l1.CheckedChanged += ShapeThumb_CheckedChanged;
+            l2.CheckedChanged += ShapeThumb_CheckedChanged;
 
+            thumbs = new ShapeThumb[] {l1, l2};
             grpBoxShape.Controls.Add(l1);
+            grpBoxShape.Controls.Add(l2);
         }
 
-        void l1_CheckedChanged(object sender, EventArgs e)
+        void ShapeThumb_CheckedChanged(object sender, EventArgs e)
         {
             ShapeThumb s = sender as ShapeThumb;
             shape = s.Shape;
@@ -130,7 +141,16 @@ namespace Graphics
         {
             var radio = ((RadioButton)sender);
             if (radio.Checked)
+            {
                 this.factory = (DiagramFactory)radio.Tag;
+                
+                //change thumbnail
+                if (this.thumbs == null) return;
+                foreach (var t in this.thumbs.ToList())
+                {
+                    t.changeFactory(this.factory);
+                }
+            }
         }
 
         private void Form1_Load(object sender, EventArgs e)
