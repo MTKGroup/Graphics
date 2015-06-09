@@ -9,12 +9,12 @@ namespace Graphics
     {
         public override Block CreateInput(Graphics.ShapeInfo info)
         {
-            return new AcInputBlock(info);
+            return new AcInputBlock(info.Clone());
         }
 
         public override Block CreateStart(Graphics.ShapeInfo info)
         {
-            return new AcStartBlock(info);
+            return new AcStartBlock(info.Clone());
         }
     }
 }

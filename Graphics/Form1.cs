@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.ComponentModel;
+using System.Configuration;
 using System.Data;
 using System.Drawing;
 using System.Linq;
@@ -13,20 +14,19 @@ namespace Graphics
     public partial class Form1 : Form
     {
 
-        GdiPlusGraphics g = new GdiPlusGraphics();
-        GdiPlusGraphics g2 = new GdiPlusGraphics();
+        CommonGraphics graphic;
+        Bitmap buffer;
+        bool isBufferring;
 
-        DiagramFactory factory;
         EffectedShape effect;
         Shape shape;
-        List<Shape> shapes = new List<Shape>();
+        Diagram diagram;
         ShapeThumb[] thumbs;
 
         Shape effectedShape; 
         private Point start = new Point();
         private Point end = new Point();
         private bool isDrawing;
-
 
         public Form1()
 
@@ -35,25 +35,39 @@ namespace Graphics
             this.DoubleBuffered = true;
 
             effectedShape = new ShadowShape(shape);
-            g.Lib = panel1.CreateGraphics();
             panel1.Paint += panel1_Paint;
+            this.SetStyle(ControlStyles.OptimizedDoubleBuffer, true);
+
+            buffer = new Bitmap(panel1.Width, panel1.Height, System.Drawing.Imaging.PixelFormat.Format32bppArgb);
+            //panel1.GetType().GetMember"DoubleBuffered").SetValue(panel1, true);
 
             createSelectBoxDiagram();
             createSelectBoxEffect();
             createSelectBoxShape();
+            configGraphicsLib();
+
+            
+        }
+
+        private void configGraphicsLib()
+        {
+            
+            gdiLibraryToolStripMenuItem.Tag     =   new GdiPlusGraphics(System.Drawing.Graphics.FromImage(this.buffer));
+            cairoLibraryToolStripMenuItem.Tag   =   new CairoGraphics(System.Drawing.Graphics.FromImage(this.buffer));
+            gdiLibraryToolStripMenuItem.Checked =   true;
         }
 
         private void createSelectBoxShape()
         {
-            ShapeThumb l1 = new ShapeThumb(this.factory.CreateStart(
+            ShapeThumb l1 = new ShapeThumb(this.diagram.Factory.CreateStart(
                                     new ShapeInfo()));
-            l1.Bounds   =   new Rectangle(30, 30, 80, 80);
+            l1.Bounds   =   new Rectangle(50, 30, 80, 80);
             l1.Text     =   "Start";
             l1.FlatStyle = FlatStyle.Flat;
 
-            ShapeThumb l2 = new ShapeThumb(this.factory.CreateInput(
+            ShapeThumb l2 = new ShapeThumb(this.diagram.Factory.CreateInput(
                                     new ShapeInfo()));
-            l2.Bounds = new Rectangle(30, 120, 80, 80);
+            l2.Bounds = new Rectangle(50, 120, 80, 80);
             l2.Text = "Input";
             l2.FlatStyle = FlatStyle.Flat;
             
@@ -68,16 +82,12 @@ namespace Graphics
 
         void ShapeThumb_CheckedChanged(object sender, EventArgs e)
         {
-            ShapeThumb s = sender as ShapeThumb;
-            shape = s.Shape;
+            var l = sender as ShapeThumb;
+            if (l.Checked) {
+                shape = l.GetClonedShape(this.diagram.Factory);
+                shape.Info.Color = panel1.ForeColor;
+            }
         }
-
- 
-
- 
-
-
-
 
 
         private void createSelectBoxEffect()
@@ -111,7 +121,9 @@ namespace Graphics
         {
             RadioButton r = sender as RadioButton;
             if (r.Checked)
+            {
                 effect = r.Tag as EffectedShape;
+            }
         }
 
 
@@ -142,45 +154,87 @@ namespace Graphics
             var radio = ((RadioButton)sender);
             if (radio.Checked)
             {
-                this.factory = (DiagramFactory)radio.Tag;
+                if (this.diagram == null)
+                    this.diagram = new Diagram((DiagramFactory)radio.Tag);
+                else
+                {
+                    this.diagram.Convert((DiagramFactory)radio.Tag);
+                    PrepareDraw();
+                    panel1.Invalidate();
+                }
+                    
                 
                 //change thumbnail
                 if (this.thumbs == null) return;
                 foreach (var t in this.thumbs.ToList())
                 {
-                    t.changeFactory(this.factory);
+                    t.changeFactory(this.diagram.Factory);
                 }
+
+                //change current shape
+                if (this.shape != null)
+                    this.shape = (this.shape as Block).Convert(this.diagram.Factory);
             }
         }
+
+        System.Drawing.Graphics a;
 
         private void Form1_Load(object sender, EventArgs e)
         {
-                  
+
         }
 
+        long prev = 0;
         void panel1_Paint(object sender, PaintEventArgs e)
         {
-            foreach (var s in this.shapes)
+
+            base.OnPaint(e);
+
+            if (!isBufferring) 
             {
-                s.Draw(g);
+                isBufferring = true;
+                e.Graphics.DrawImage(this.buffer, 0, 0);
+                isBufferring = false;
             }
 
-            if (shape != null) {
+
+            
+            
+        }
+
+        void PrepareDraw() 
+        {
+            if (isBufferring) return;
+            isBufferring = true;
+
+            graphic.Clear(panel1.BackColor);
+            diagram.Draw(graphic);
+
+            if (shape != null && isDrawing)
+            {
                 shape.Info.X = start.X;
                 shape.Info.Y = start.Y;
                 shape.Info.Width = end.X - start.X;
                 shape.Info.Height = end.Y - start.Y;
-                shape.Draw(g);
+                if (effect != null)
+                    effect.Draw(graphic);
+                else
+                    shape.Draw(graphic);
             }
-        }
 
+            isBufferring = false;
+        }
 
         private void panel1_MouseDown(object sender, MouseEventArgs e)
         {
-
             this.isDrawing = true;
-            this.start.X = this.end.X = e.X;
-            this.start.Y = this.end.Y = e.Y;
+            this.start.X = e.X;
+            this.start.Y = e.Y;
+            if (effect != null) 
+            {
+                effect.shape = shape;
+            }
+            
         }
 
         private void panel1_MouseMove(object sender, MouseEventArgs e)
@@ -189,6 +243,7 @@ namespace Graphics
             {
                 this.end.X = e.X;
                 this.end.Y = e.Y;
+                PrepareDraw();
                 panel1.Invalidate();
             }
         }
@@ -198,10 +253,18 @@ namespace Graphics
             this.isDrawing = false;
             this.end.X = e.X;
             this.end.Y = e.Y;
+
+            if (effect != null && shape != null)
+                this.diagram.addShape(effect);
+            else if (shape != null)
+                this.diagram.addShape(shape);
+
+            PrepareDraw();
             panel1.Invalidate();
+
         }
 
-
+        
 
         private void graphicsLibraryToolStripMenuItem_CheckedChanged(object sender, EventArgs e)
         {
@@ -217,7 +280,47 @@ namespace Graphics
                 }
 
             }
+            graphic = item.Tag as CommonGraphics;
+            PrepareDraw();
+            panel1.Invalidate();
 
+        }
+
+        private void jpegToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Bitmap bitmap = new Bitmap(panel1.Width, panel1.Height, System.Drawing.Imaging.PixelFormat.Format32bppArgb);
+            CommonGraphics g = new GdiPlusJpegGraphics(bitmap);
+            g.Clear(panel1.BackColor);
+            if (diagram != null)
+                diagram.Draw(g);
+
+            bitmap.Save("output.jpg", System.Drawing.Imaging.ImageFormat.Jpeg);
+            var process = new System.Diagnostics.Process();
+            process.StartInfo = new System.Diagnostics.ProcessStartInfo("output.jpg");
+            process.StartInfo.WorkingDirectory = Application.StartupPath;
+            process.Start();
+
+
+        }
+
+        private void bitmapToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Bitmap bitmap = new Bitmap(panel1.Width, panel1.Height, System.Drawing.Imaging.PixelFormat.Format32bppArgb);
+            CommonGraphics g = new GdiPlusJpegGraphics(bitmap);
+            g.Clear(panel1.BackColor);
+            if (diagram != null)
+                diagram.Draw(g);
+
+            bitmap.Save("output.bmp", System.Drawing.Imaging.ImageFormat.Bmp);
+            var process = new System.Diagnostics.Process();
+            process.StartInfo = new System.Diagnostics.ProcessStartInfo("output.bmp");
+            process.StartInfo.WorkingDirectory = Application.StartupPath;
+            process.Start();
+        }
+
+        private void openImageFolderToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            System.Diagnostics.Process.Start(Application.StartupPath);
         }
     }
 }

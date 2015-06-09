@@ -6,36 +6,20 @@ using System.Text;
 
 namespace Graphics
 {
-    public class CommonGraphics
+    public abstract class CommonGraphics
     {
-        public virtual void DrawLine(int x1, int y1, int x2, int y2, Color color)
-        {
-            throw new System.NotImplementedException();
-        }
+        public abstract void DrawLine(int x1, int y1, int x2, int y2, Color color);
 
-        public virtual void DrawRectangle(int x, int y, int width, int height, Color color)
-        {
-            throw new System.NotImplementedException();
-        }
+        public abstract void DrawRectangle(int x, int y, int width, int height, Color color);
 
-        public virtual void DrawEclipse(int x, int y, int width, int height, Color color)
-        {
-            throw new System.NotImplementedException();
-        }
+        public abstract void DrawEclipse(int x, int y, int width, int height, Color color);
 
-        public virtual void DrawString(int x, int y, string text, Color color)
-        {
-            throw new System.NotImplementedException();
-        }
+        public abstract void DrawString(int x, int y, string text, Color color);
 
-        public virtual void DrawFilledEclipse(int x, int y, int width, int height, Color color)
-        {
-            throw new System.NotImplementedException();
-        }
+        public abstract void DrawFilledEclipse(int x, int y, int width, int height, Color color);
 
-        public virtual void FillPolygon(Point[] points, Color fillColor)
-        {
-            throw new System.NotImplementedException();
-        }
+        public abstract void FillPolygon(Point[] points, Color fillColor);
+
+        public abstract void Clear(Color color);
     }
 }

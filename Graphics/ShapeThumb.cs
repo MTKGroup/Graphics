@@ -39,7 +39,12 @@ namespace Graphics
                     int g = (int)(shape.Info.Color.G * 1.3);
                     int b = (int)(shape.Info.Color.B * 1.3);
 
-                    shape.Info.Color = Color.FromArgb(255, r, g, b);
+                 
+
+                    if (value)
+                        shape.Info.Color = Color.FromArgb(255, r, g, b);
+                    else
+                        shape.Info.Color = this.ForeColor;
 
                     Invalidate();
                 }
@@ -52,14 +57,15 @@ namespace Graphics
         {
             color = ForeColor;
             shape = s;
-
-            shape.Info = new ShapeInfo(5, 5, this.Width - 10, this.Height - 10, ForeColor);
+            shape.Info = new ShapeInfo(this.Width / 5, this.Height / 5, this.Width * 3 / 5, this.Height * 3 / 5, ForeColor);
         }
+
+        
 
         protected override void OnClientSizeChanged(EventArgs e)
         {
             base.OnClientSizeChanged(e);
-            shape.Info = new ShapeInfo(5, 5, this.Width - 10, this.Height - 10, ForeColor);
+            shape.Info = new ShapeInfo(this.Width / 5, this.Height / 5, this.Width * 3 / 5, this.Height * 3 / 5, ForeColor);
 
         }
 
@@ -68,6 +74,7 @@ namespace Graphics
             base.OnPaint(e);
 
             g2.Lib = e.Graphics;
+
             e.Graphics.Clear(this.Parent.BackColor);
             shape.Draw(g2);
         }
@@ -89,16 +96,21 @@ namespace Graphics
                 shape.Info.Color = this.ForeColor;
                 Invalidate();
             }
+            else
+            {
+                //shape.Info.Color = Color.FromArgb(255, 255, 200, 10);
+                Invalidate();
+            }
 
         }
 
         protected override void OnMouseUp(MouseEventArgs e)
         {
 
-            shape.Info.X = 5;
-            shape.Info.Y = 5;
-            shape.Info.Width = this.Width - 10;
-            shape.Info.Height = this.Height - 10;
+            shape.Info.X = this.Width/5;
+            shape.Info.Y = this.Height / 5;
+            shape.Info.Width = this.Width * 3 / 5;
+            shape.Info.Height = this.Height * 3 / 5;
             Invalidate();
 
             base.OnMouseUp(e);
@@ -109,10 +121,10 @@ namespace Graphics
         {
             base.OnMouseDown(e);
 
-            shape.Info.X = 10;
-            shape.Info.Y = 10;
-            shape.Info.Width = this.Width - 20;
-            shape.Info.Height = this.Height - 20;
+            shape.Info.X = this.Width / 4;
+            shape.Info.Y = this.Height / 4;
+            shape.Info.Width = this.Width /2;
+            shape.Info.Height = this.Height /2;
             Invalidate();
 
         }
@@ -123,8 +135,11 @@ namespace Graphics
 
             foreach (var c in this.Parent.Controls)
             {
-                if (c is ShapeThumb && !c.Equals(this) && this.Checked)
+                if (c is ShapeThumb && !c.Equals(this) && (c as ShapeThumb).Checked)
+                {
                     (c as ShapeThumb).Checked = false;
+                    
+                }
             }
 
             this.Checked = true;
@@ -132,9 +147,14 @@ namespace Graphics
 
         internal void changeFactory(DiagramFactory diagramFactory)
         {
-            var info = this.shape.Info;
+            this.shape = ((Block)this.shape).Convert(diagramFactory);
+            Invalidate();
+        }
 
-            
+        internal Graphics.Shape GetClonedShape(DiagramFactory diagramFactory)
+        {
+            var block = shape as Block;
+            return block.Convert(diagramFactory);
         }
     }
 }

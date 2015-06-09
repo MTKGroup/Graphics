@@ -25,7 +25,7 @@ namespace Graphics
 
         }
 
-        public override Graphics.Block Clone(Graphics.DiagramFactory f)
+        public override Graphics.Block Convert(Graphics.DiagramFactory f)
         {
 
             return f.CreateInput(this.Info);
@@ -33,12 +33,21 @@ namespace Graphics
 
         public override void Draw(Graphics.CommonGraphics g)
         {
+            
             Point A = new Point(this.Info.X, this.Info.Y);
             Point B = new Point(this.Info.X + this.Info.Width, this.Info.Y);
             Point C = new Point(this.Info.X - this.Info.Width / 5 + this.Info.Width,
                                 this.Info.Y + this.Info.Height);
             Point D = new Point(this.Info.X - this.Info.Width/5, this.Info.Y + this.Info.Height);
+            
 
+            /* 
+            Point A = new Point(this.Info.X + this.Info.Width/5, this.Info.Y);
+            Point B = new Point(A.X + this.Info.Width, A.Y);
+            Point C = new Point(B.X - this.Info.Width / 5,
+                                B.Y + this.Info.Height);
+            Point D = new Point(C.X - this.Info.Width, C.Y);
+             */
 
             g.DrawLine(A.X, A.Y, B.X, B.Y, this.Info.Color);
             g.DrawLine(A.X, A.Y, D.X, D.Y, this.Info.Color);
@@ -57,6 +66,12 @@ namespace Graphics
             Point[] points = { A, B, C, D };
 
             g.FillPolygon(points, fillColor);
+        }
+
+        public override Shape Clone()
+        {
+            var newShape = new FcInputBlock(this.Info.Clone());
+            return newShape;
         }
     }
 }

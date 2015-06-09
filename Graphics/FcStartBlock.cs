@@ -25,7 +25,7 @@ namespace Graphics
 
         }
 
-        public override Block Clone(Graphics.DiagramFactory f)
+        public override Block Convert(Graphics.DiagramFactory f)
         {
             return f.CreateStart(this.Info);
         }
@@ -39,6 +39,12 @@ namespace Graphics
         public override void Fill(Graphics.CommonGraphics g, Color fillColor)
         {
             g.DrawFilledEclipse(this.Info.X, this.Info.Y, this.Info.Width, this.Info.Height, fillColor);
+        }
+
+        public override Shape Clone()
+        {
+            var newShape = new FcStartBlock(this.Info.Clone());
+            return newShape;
         }
     }
 }

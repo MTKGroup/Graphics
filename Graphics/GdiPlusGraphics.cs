@@ -11,6 +11,13 @@ namespace Graphics
     {
         System.Drawing.Graphics lib;
 
+        public GdiPlusGraphics() { }
+
+        public GdiPlusGraphics(System.Drawing.Graphics g)
+        {
+            lib = g;
+        }
+
         public System.Drawing.Graphics Lib
         {
             get { return lib; }
@@ -61,5 +68,10 @@ namespace Graphics
         }
 
 
+
+        public override void Clear(Color color)
+        {
+            this.Lib.Clear(color);
+        }
     }
 }

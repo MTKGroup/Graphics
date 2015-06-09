@@ -18,7 +18,7 @@ namespace Graphics
             this.shape = s;
         }
 
-        public override void Format(Graphics.CommonGraphics g)
+        protected override void Format(Graphics.CommonGraphics g)
         {
             this.shape.Info.X += 10;
             this.shape.Info.Y += 10;
@@ -27,6 +27,16 @@ namespace Graphics
             this.shape.Info.X -= 10;
             this.shape.Info.Y -= 10;
             shape.Fill(g, Color.White);
+        }
+
+        public override Shape Clone()
+        {
+            var newshape = new ShadowShape(this.shape.Clone());
+            return newshape;
+        }
+
+        public override void Fill(CommonGraphics g, Color fillColor)
+        {
         }
     }
 }

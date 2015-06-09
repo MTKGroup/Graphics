@@ -27,5 +27,9 @@ namespace Graphics
             this.Height = height;
             this.Color = color;
         }
+
+        public ShapeInfo Clone() {
+            return this.MemberwiseClone() as ShapeInfo;
+        }
     }
 }

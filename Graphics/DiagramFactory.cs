@@ -5,16 +5,10 @@ using System.Text;
 
 namespace Graphics
 {
-    public class DiagramFactory
+    public abstract class DiagramFactory
     {
-        public virtual Block CreateStart(ShapeInfo info)
-        {
-            throw new System.NotImplementedException();
-        }
+        public abstract Block CreateStart(ShapeInfo info);
 
-        public virtual Block CreateInput(ShapeInfo info)
-        {
-            throw new System.NotImplementedException();
-        }
+        public abstract Block CreateInput(ShapeInfo info);
     }
 }

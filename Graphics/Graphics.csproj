@@ -72,7 +72,12 @@
     <Prefer32Bit>true</Prefer32Bit>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="Mono.Cairo, Version=4.0.0.0, Culture=neutral, PublicKeyToken=0738eb9f132ed756, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\..\..\Program Files\GtkSharp\2.12\lib\Mono.Cairo\Mono.Cairo.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
+    <Reference Include="System.Configuration" />
     <Reference Include="System.Core" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
@@ -93,6 +98,9 @@
     <Compile Include="CairoJpegGraphics.cs" />
     <Compile Include="CairoSvgGraphics.cs" />
     <Compile Include="CommonGraphics.cs" />
+    <Compile Include="DBPanel.cs">
+      <SubType>Component</SubType>
+    </Compile>
     <Compile Include="Diagram.cs" />
     <Compile Include="DiagramFactory.cs" />
     <Compile Include="EffectedShape.cs" />
@@ -106,6 +114,7 @@
     <Compile Include="Form1.Designer.cs">
       <DependentUpon>Form1.cs</DependentUpon>
     </Compile>
+    <Compile Include="GdiPlusBitmapGraphics.cs" />
     <Compile Include="GdiPlusGraphics.cs" />
     <Compile Include="GdiPlusJpegGraphics.cs" />
     <Compile Include="HighlightShape.cs" />

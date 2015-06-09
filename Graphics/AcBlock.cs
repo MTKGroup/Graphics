@@ -8,15 +8,9 @@ namespace Graphics
 {
     public abstract class AcBlock : Block
     {
-        public override void Draw(Graphics.CommonGraphics g)
-        {
-            throw new System.NotImplementedException();
-        }
+        public override abstract void Draw(Graphics.CommonGraphics g);
 
-        public override void Fill(Graphics.CommonGraphics g, Color fillColor)
-        {
-            throw new System.NotImplementedException();
-        }
+        public override abstract void Fill(Graphics.CommonGraphics g, Color fillColor);
 
         public AcBlock()
         { }
@@ -32,5 +26,7 @@ namespace Graphics
         {
 
         }
+
+        public override abstract Block Convert(DiagramFactory f);
     }
 }

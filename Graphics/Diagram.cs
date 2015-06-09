@@ -7,14 +7,14 @@ namespace Graphics
 {
     public class Diagram : Shape
     {
-        public DiagramFactory factory {get; set;}
+        public DiagramFactory Factory {get; set;}
 
-        public List<Block> blockList {get; set;}
+        public List<Shape> blockList {get; set;}
 
         public Diagram(DiagramFactory f)
         {
-            factory = f;
-            blockList = new List<Block>();
+            Factory = f;
+            blockList = new List<Shape>();
         }
 
         public override void Draw(Graphics.CommonGraphics g)
@@ -28,15 +28,47 @@ namespace Graphics
 
         public void Convert(DiagramFactory f)
         {
-            List<Block> convertedBlockList = new List<Block>();
+            List<Shape> convertedBlockList = new List<Shape>();
+            Shape convertedBlock;
             foreach (var block in this.blockList)
             {
-                Block convertedBlock = block.Clone(f);
-                convertedBlockList.Add(convertedBlock);
+
+                convertedBlock = extractEffectecShape(block, f);
+    
+
+                if (convertedBlock != null)
+                    convertedBlockList.Add(convertedBlock);
             }
 
             this.blockList = convertedBlockList;
-            this.factory = f;
-        }        
+            this.Factory = f;
+        }
+
+        private Shape extractEffectecShape(Shape shape, DiagramFactory f)
+        {
+            if (shape is Block)
+                return (shape as Block).Convert(f);
+            if (shape is EffectedShape) {
+                var newShape = shape.Clone() as EffectedShape;
+                newShape.shape = extractEffectecShape((shape as EffectedShape).shape, f);
+                return newShape;
+            }
+            return null;
+        }
+
+        internal void addShape(Shape tmp)
+        {
+            if (tmp != null)
+                this.blockList.Add(tmp.Clone());
+        }
+
+        public override void Fill(CommonGraphics g, System.Drawing.Color fillColor)
+        {
+        }
+
+        public override Shape Clone()
+        {
+            return null;
+        }
     }
 }

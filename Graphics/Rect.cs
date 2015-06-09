@@ -31,5 +31,10 @@ namespace Graphics
         {
             throw new System.NotImplementedException();
         }
+
+        public override Shape Clone()
+        {
+            throw new NotImplementedException();
+        }
     }
 }

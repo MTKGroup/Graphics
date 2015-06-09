@@ -17,7 +17,11 @@ namespace Graphics
             this.shape.Draw(g);
         }
 
-        public abstract void Format(CommonGraphics g);
+        protected abstract void Format(CommonGraphics g);
 
+        public override abstract Shape Clone();
+
+
+        public override abstract void Fill(CommonGraphics g, System.Drawing.Color fillColor);
     }
 }

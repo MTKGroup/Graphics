@@ -25,7 +25,7 @@ namespace Graphics
 
         }
 
-        public override Graphics.Block Clone(Graphics.DiagramFactory f)
+        public override Graphics.Block Convert(Graphics.DiagramFactory f)
         {
             return f.CreateInput(this.Info);
         }
@@ -60,6 +60,12 @@ namespace Graphics
             Point[] points = { A, B, C, D, E };
 
             g.FillPolygon(points, fillColor);
+        }
+
+        public override Shape Clone()
+        {
+            var newShape = new AcInputBlock(this.Info.Clone());
+            return newShape;
         }
     }
 }

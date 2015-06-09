@@ -28,7 +28,6 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.panel1 = new System.Windows.Forms.Panel();
             this.grpBoxTypeDiagram = new System.Windows.Forms.GroupBox();
             this.grpBoxShape = new System.Windows.Forms.GroupBox();
             this.grpBoxEffect = new System.Windows.Forms.GroupBox();
@@ -39,17 +38,11 @@
             this.graphicsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.gdiLibraryToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.cairoLibraryToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.bitmapToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.panel1 = new Graphics.DBPanel();
+            this.openImageFolderToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
-            // 
-            // panel1
-            // 
-            this.panel1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.panel1.Location = new System.Drawing.Point(284, 61);
-            this.panel1.Margin = new System.Windows.Forms.Padding(4);
-            this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(568, 526);
-            this.panel1.TabIndex = 0;
             // 
             // grpBoxTypeDiagram
             // 
@@ -83,6 +76,7 @@
             // 
             // menuStrip1
             // 
+            this.menuStrip1.ImageScalingSize = new System.Drawing.Size(20, 20);
             this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.fileToolStripMenuItem,
             this.graphicsToolStripMenuItem});
@@ -95,7 +89,8 @@
             // fileToolStripMenuItem
             // 
             this.fileToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.saveToolStripMenuItem});
+            this.saveToolStripMenuItem,
+            this.openImageFolderToolStripMenuItem});
             this.fileToolStripMenuItem.Name = "fileToolStripMenuItem";
             this.fileToolStripMenuItem.Size = new System.Drawing.Size(44, 24);
             this.fileToolStripMenuItem.Text = "File";
@@ -103,16 +98,18 @@
             // saveToolStripMenuItem
             // 
             this.saveToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.jpegToolStripMenuItem});
+            this.jpegToolStripMenuItem,
+            this.bitmapToolStripMenuItem});
             this.saveToolStripMenuItem.Name = "saveToolStripMenuItem";
-            this.saveToolStripMenuItem.Size = new System.Drawing.Size(127, 24);
+            this.saveToolStripMenuItem.Size = new System.Drawing.Size(204, 24);
             this.saveToolStripMenuItem.Text = "Save as";
             // 
             // jpegToolStripMenuItem
             // 
             this.jpegToolStripMenuItem.Name = "jpegToolStripMenuItem";
-            this.jpegToolStripMenuItem.Size = new System.Drawing.Size(108, 24);
+            this.jpegToolStripMenuItem.Size = new System.Drawing.Size(175, 24);
             this.jpegToolStripMenuItem.Text = "jpeg";
+            this.jpegToolStripMenuItem.Click += new System.EventHandler(this.jpegToolStripMenuItem_Click);
             // 
             // graphicsToolStripMenuItem
             // 
@@ -127,7 +124,7 @@
             // 
             this.gdiLibraryToolStripMenuItem.CheckOnClick = true;
             this.gdiLibraryToolStripMenuItem.Name = "gdiLibraryToolStripMenuItem";
-            this.gdiLibraryToolStripMenuItem.Size = new System.Drawing.Size(175, 24);
+            this.gdiLibraryToolStripMenuItem.Size = new System.Drawing.Size(159, 24);
             this.gdiLibraryToolStripMenuItem.Text = "Gdi+ library";
             this.gdiLibraryToolStripMenuItem.CheckedChanged += new System.EventHandler(this.graphicsLibraryToolStripMenuItem_CheckedChanged);
             // 
@@ -135,9 +132,36 @@
             // 
             this.cairoLibraryToolStripMenuItem.CheckOnClick = true;
             this.cairoLibraryToolStripMenuItem.Name = "cairoLibraryToolStripMenuItem";
-            this.cairoLibraryToolStripMenuItem.Size = new System.Drawing.Size(175, 24);
+            this.cairoLibraryToolStripMenuItem.Size = new System.Drawing.Size(159, 24);
             this.cairoLibraryToolStripMenuItem.Text = "Cairo library";
             this.cairoLibraryToolStripMenuItem.CheckedChanged += new System.EventHandler(this.graphicsLibraryToolStripMenuItem_CheckedChanged);
+            // 
+            // bitmapToolStripMenuItem
+            // 
+            this.bitmapToolStripMenuItem.Name = "bitmapToolStripMenuItem";
+            this.bitmapToolStripMenuItem.Size = new System.Drawing.Size(175, 24);
+            this.bitmapToolStripMenuItem.Text = "bitmap";
+            this.bitmapToolStripMenuItem.Click += new System.EventHandler(this.bitmapToolStripMenuItem_Click);
+            // 
+            // panel1
+            // 
+            this.panel1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.panel1.Location = new System.Drawing.Point(284, 61);
+            this.panel1.Margin = new System.Windows.Forms.Padding(4);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(568, 526);
+            this.panel1.TabIndex = 0;
+            this.panel1.Paint += new System.Windows.Forms.PaintEventHandler(this.panel1_Paint);
+            this.panel1.MouseDown += new System.Windows.Forms.MouseEventHandler(this.panel1_MouseDown);
+            this.panel1.MouseMove += new System.Windows.Forms.MouseEventHandler(this.panel1_MouseMove);
+            this.panel1.MouseUp += new System.Windows.Forms.MouseEventHandler(this.panel1_MouseUp);
+            // 
+            // openImageFolderToolStripMenuItem
+            // 
+            this.openImageFolderToolStripMenuItem.Name = "openImageFolderToolStripMenuItem";
+            this.openImageFolderToolStripMenuItem.Size = new System.Drawing.Size(204, 24);
+            this.openImageFolderToolStripMenuItem.Text = "Open image folder";
+            this.openImageFolderToolStripMenuItem.Click += new System.EventHandler(this.openImageFolderToolStripMenuItem_Click);
             // 
             // Form1
             // 
@@ -163,7 +187,6 @@
 
         #endregion
 
-        private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.GroupBox grpBoxTypeDiagram;
         private System.Windows.Forms.GroupBox grpBoxShape;
         private System.Windows.Forms.GroupBox grpBoxEffect;
@@ -174,6 +197,9 @@
         private System.Windows.Forms.ToolStripMenuItem graphicsToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem gdiLibraryToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem cairoLibraryToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem bitmapToolStripMenuItem;
+        private DBPanel panel1;
+        private System.Windows.Forms.ToolStripMenuItem openImageFolderToolStripMenuItem;
     }
 }
 

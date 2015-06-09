@@ -31,14 +31,10 @@ namespace Graphics
 
         public ShapeInfo Info { get; set;}
 
-        public virtual void Draw(CommonGraphics g)
-        {
-            
-        }
+        public abstract void Draw(CommonGraphics g);
 
-        public virtual void Fill(CommonGraphics g, Color fillColor)
-        {
+        public abstract void Fill(CommonGraphics g, Color fillColor);
 
-        }
+        public abstract Shape Clone();
     }
 }

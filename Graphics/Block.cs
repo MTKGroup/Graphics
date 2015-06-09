@@ -6,14 +6,11 @@ using System.Text;
 
 namespace Graphics
 {
-    public class Block : Shape
+    public abstract class Block : Shape
     {
-       
 
-        public override void Draw(Graphics.CommonGraphics g)
-        {
-            throw new System.NotImplementedException();
-        }
+
+        public override abstract void Draw(Graphics.CommonGraphics g);
 
         
 
@@ -32,14 +29,8 @@ namespace Graphics
 
         }
 
-        public virtual Block Clone(DiagramFactory f)
-        {
-            return null;
-        }
+        public abstract Block Convert(DiagramFactory f);
 
-        public override void Fill(Graphics.CommonGraphics g, Color fillColor)
-        {
-            throw new System.NotImplementedException();
-        }
+        public override abstract void Fill(Graphics.CommonGraphics g, Color fillColor);
     }
 }
